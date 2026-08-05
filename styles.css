@@ -2209,6 +2209,19 @@ figure {
     min-height: 190px;
   }
 
+  /* Keep the practitioner and guest faces inside the narrow mobile photo column. */
+  .methods > article:nth-of-type(1) img {
+    object-position: 84% center;
+  }
+
+  .methods > article:nth-of-type(2) img {
+    object-position: 76% center;
+  }
+
+  .methods > article:nth-of-type(3) img {
+    object-position: 70% center;
+  }
+
   .methods > article div {
     padding: 20px 16px 18px;
   }

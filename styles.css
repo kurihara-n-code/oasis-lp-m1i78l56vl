@@ -1715,7 +1715,7 @@ figure {
 }
 
 .first-flow-summary {
-  color: var(--navy);
+  color: var(--yellow);
   background: var(--white);
   border-bottom: 1px solid var(--line);
 }
@@ -1792,9 +1792,10 @@ figure {
 }
 
 .customer-voices-arrow {
-  background: var(--white);
-  border: 1px solid var(--line);
-  box-shadow: 0 5px 14px rgba(30, 44, 92, 0.12);
+  color: var(--white);
+  background: var(--yellow);
+  border: 1px solid var(--yellow);
+  box-shadow: 0 5px 14px rgba(255, 82, 0, 0.22);
 }
 
 .chosen-reasons {
@@ -1840,8 +1841,8 @@ figure {
 }
 
 .store-list nav a:last-child {
-  color: var(--ink);
-  text-shadow: none;
+  color: var(--white);
+  text-shadow: 0 1px 0 rgba(30, 44, 92, 0.55);
 }
 
 .customer-voices-title span,
@@ -2592,5 +2593,224 @@ figure {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* v9 connected treatment-flow boxes */
+.oasis-flow ol {
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.oasis-flow ol::before {
+  display: none;
+}
+
+.oasis-flow li {
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: start;
+  min-height: 0;
+  padding: 0;
+  background: #fffdf6;
+  border: 2px solid var(--yellow);
+}
+
+.oasis-flow li:not(:last-child)::after {
+  position: absolute;
+  z-index: 0;
+  top: calc(100% + 2px);
+  left: 50%;
+  width: 6px;
+  height: 22px;
+  background: var(--yellow);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.oasis-flow li > span {
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-top: 22px;
+  color: var(--yellow);
+  background: rgba(255, 82, 0, 0.08);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 19px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.oasis-flow li > div {
+  padding: 18px 20px 19px 0;
+  color: var(--navy);
+  background: #fffdf6;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.oasis-flow h3 {
+  color: var(--navy);
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.oasis-flow li p {
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .oasis-flow ol {
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .oasis-flow li {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+
+  .oasis-flow li:not(:last-child)::after {
+    width: 5px;
+    height: 18px;
+  }
+
+  .oasis-flow li > span {
+    padding-top: 18px;
+    font-size: 15px;
+  }
+
+  .oasis-flow h3 {
+    font-size: 18px;
+  }
+
+  .oasis-flow li p {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .oasis-flow li > div {
+    padding: 15px 14px 16px 0;
+  }
+}
+
+/* v9 opening: keep the copy and photo in separate areas */
+.opening {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.72fr);
+  gap: 32px;
+  align-items: center;
+  min-height: 0;
+  padding: 64px 40px;
+}
+
+.opening-copy {
+  width: auto;
+}
+
+.opening-copy h2 {
+  color: var(--yellow);
+  margin: 0 0 14px;
+  font-size: 31px;
+  line-height: 1.5;
+}
+
+.opening-copy p {
+  margin: 0;
+  color: var(--navy);
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.65;
+}
+
+.opening > img {
+  position: static;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  object-fit: cover;
+  border-radius: 50% 0 0 0;
+}
+
+@media (max-width: 600px) {
+  .opening {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 46px 21px 28px;
+  }
+
+  .opening-copy h2 {
+    margin-bottom: 12px;
+    font-size: 25px;
+    line-height: 1.5;
+  }
+
+  .opening-copy p {
+    font-size: 22px;
+    line-height: 1.7;
+  }
+
+  .opening > img {
+    width: min(100%, 310px);
+    justify-self: end;
+  }
+}
+
+/* v9: visually separate the store information from the treatment flow */
+.stores {
+  border-top: 26px solid var(--white);
+}
+
+.store-title {
+  color: var(--navy);
+  background: var(--white);
+  border-top: 3px solid var(--yellow);
+  border-bottom: 3px solid var(--yellow);
+}
+
+.store-title span {
+  color: var(--yellow);
+  border-bottom-color: var(--yellow);
+}
+
+.store-title h2,
+.store-title p {
+  color: var(--navy);
+}
+
+.offer:not(.offer-last) .reserve-button {
+  background: var(--red);
+}
+
+@media (min-width: 761px) {
+  .topbar {
+    width: 700px;
+    height: 92px;
+    margin: 0 auto;
+  }
+
+  .topbar-nav,
+  .topbar-nav a {
+    min-height: 0;
+  }
+
+  .topbar-nav {
+    height: 100%;
+  }
+
+  .lp {
+    margin: 0 auto;
+    padding-top: 0;
   }
 }

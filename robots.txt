@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kurihara-n-code.github.io/oasis-lp-f939525bc3/sitemap.xml
+Sitemap: https://kurihara-n-code.github.io/oasis-lp-m1i78l56vl/sitemap.xml

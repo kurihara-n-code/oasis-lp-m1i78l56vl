@@ -917,6 +917,10 @@ figure {
   line-height: 1.35;
 }
 
+.method-course-name {
+  color: var(--yellow);
+}
+
 .method-index {
   color: var(--yellow);
   font-size: 12px;
